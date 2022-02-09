@@ -1,3 +1,4 @@
+import subprocess
 import datetime
 import sys
 import glob
@@ -25,3 +26,5 @@ tags: ["タグ1","タグ２"]
 ---
 '''
     f.write(template)
+
+subprocess.run(['code', file_path])
