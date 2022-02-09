@@ -14,7 +14,6 @@ import { Title } from "components/Title";
 import { Footer } from "components/Footer";
 import { CustomLink } from "components/customLink";
 import { CustomNav } from "components/customNav";
-import { CustomFootnote } from "components/customfootnote";
 
 export const getStaticPaths = async () => {
   const paths = getPostsNames().map((path) => `/posts/${path}`);
@@ -34,7 +33,6 @@ const processor = unified()
     createElement: React.createElement,
     components: {
       a: CustomLink, // <a>を<CustomLink>に置き換えるよう設定
-      h2: CustomFootnote,
       nav: CustomNav,
     },
   });
