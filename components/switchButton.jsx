@@ -1,7 +1,6 @@
 import { useTheme } from "next-themes";
 import { useState, useEffect } from "react";
 import { IconContext } from "react-icons";
-import { BsFillSunFill, BsMoonStarsFill } from "react-icons/bs";
 import { BiToggleLeft, BiToggleRight } from "react-icons/bi";
 import { MdLightMode, MdDarkMode } from "react-icons/md";
 

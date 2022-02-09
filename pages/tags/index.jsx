@@ -1,7 +1,7 @@
-import { Header } from "../../components/Header";
-import { Footer } from "../../components/Footer";
-import { Tags } from "../../components/Tags";
-import { getTags } from "../../utils/getTags";
+import { Header } from "components/Header";
+import { Footer } from "components/Footer";
+import { Tags } from "components/Tags";
+import { getTags } from "utils/getTags";
 
 export const getStaticProps = async () => {
   const allTags = getTags();

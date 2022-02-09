@@ -1,6 +1,5 @@
-import "../styles/globals.css";
-import "../styles/theme.css";
-// import "highlight.js/styles/atom-one-dark.css";
+import "styles/globals.css";
+import "styles/theme.css";
 import "katex/dist/katex.min.css";
 import { ThemeProvider } from "next-themes";
 

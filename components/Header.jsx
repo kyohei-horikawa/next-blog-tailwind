@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { SwitchButton } from "./switchButton";
+import { SwitchButton } from "components/switchButton";
 
 export const Header = () => {
   return (

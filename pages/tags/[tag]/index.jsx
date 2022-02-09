@@ -1,12 +1,12 @@
 import { AiFillTags } from "react-icons/ai";
 import { IconContext } from "react-icons";
 
-import { getTags } from "../../../utils/getTags";
-import { getPostByTag } from "../../../utils/getPostByTag";
+import { getTags } from "utils/getTags";
+import { getPostByTag } from "utils/getPostByTag";
 
-import { Header } from "../../../components/Header";
-import { Footer } from "../../../components/Footer";
-import { Post } from "../../../components/Post";
+import { Header } from "components/Header";
+import { Footer } from "components/Footer";
+import { Post } from "components/Post";
 
 export const getStaticPaths = async () => {
   const paths = getTags().map((path) => `/tags/${path}`);

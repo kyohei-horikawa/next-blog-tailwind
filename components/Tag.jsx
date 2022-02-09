@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Tags } from "./Tags";
+import { Tags } from "components/Tags";
 
 export const Tags = ({ post }) => {
   const { title, date, tags, fileName } = post;

@@ -1,10 +1,10 @@
 import { MdMenuBook } from "react-icons/md";
 import { IconContext } from "react-icons";
 
-import { getPosts } from "../../utils/getPosts";
-import { Header } from "../../components/Header";
-import { Footer } from "../../components/Footer";
-import { Post } from "../../components/Post";
+import { getPosts } from "utils/getPosts";
+import { Header } from "components/Header";
+import { Footer } from "components/Footer";
+import { Post } from "components/Post";
 
 export const getStaticProps = async () => {
   const allPosts = getPosts();

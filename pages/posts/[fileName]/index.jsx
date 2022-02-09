@@ -1,20 +1,20 @@
 import React from "react";
 
-import { getPostsNames } from "../../../utils/getPostsNames";
-import { getPostByName } from "../../../utils/getPostByName";
-import { markdownToHtml } from "../../../utils/markdownToHtml";
-import { getTags } from "../../../utils/getTags";
+import { getPostsNames } from "utils/getPostsNames";
+import { getPostByName } from "utils/getPostByName";
+import { markdownToHtml } from "utils/markdownToHtml";
+import { getTags } from "utils/getTags";
 
 import { unified } from "unified";
 import rehypeParse from "rehype-parse";
 import rehypeReact from "rehype-react";
 
-import { Header } from "../../../components/Header";
-import { Title } from "../../../components/Title";
-import { Footer } from "../../../components/Footer";
-import { CustomLink } from "../../../components/customLink";
-import { CustomNav } from "../../../components/customNav";
-import { CustomFootnote } from "../../../components/customfootnote";
+import { Header } from "components/Header";
+import { Title } from "components/Title";
+import { Footer } from "components/Footer";
+import { CustomLink } from "components/customLink";
+import { CustomNav } from "components/customNav";
+import { CustomFootnote } from "components/customfootnote";
 
 export const getStaticPaths = async () => {
   const paths = getPostsNames().map((path) => `/posts/${path}`);

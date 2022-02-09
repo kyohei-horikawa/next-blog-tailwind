@@ -1,4 +1,4 @@
-import { Tags } from "./Tags";
+import { Tags } from "components/Tags";
 
 export const Title = ({ title, date, tags }) => {
   return (
