@@ -1,16 +1,81 @@
-html,
-body {
-  padding: 0;
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+
+@layer base {
+  body {
+    @apply dark:bg-darkgrey;
+  }
+  /* ページ全体のaタグ */
+  a {
+    @apply text-blue-500 hover:text-blue-600 hover:underline hover:opacity-75;
+  }
+  .tags {
+    @apply text-white hover:text-blue-600 hover:underline;
+  }
+  /* section レンダリングされるmdの内容 */
+
+  /* 目次のスタイリング */
+  nav {
+    @apply inline-block border-2 w-full px-4 py-8 mt-4 border-gray-500 dark:border-gray-200;
+  }
+  /* 目次のliの点を消す */
+  section nav li {
+    @apply list-none;
+  }
+  section nav li a {
+    @apply text-gray-700 dark:text-gray-200;
+  }
+  /* 全体のスタイリング */
+  section {
+    @apply text-black dark:text-gray-200  leading-loose;
+  }
+  section ul {
+    @apply list-disc pl-5;
+  }
+  section pre {
+    @apply rounded-full mb-4 mt-[-7px];
+  }
+  /* コードブロックのレスポンシブ対応 */
+  section pre code {
+    @apply text-xs md:text-sm lg:text-base;
+  }
+  section img {
+    @apply my-6;
+  }
+  /* 表のスタイリング */
+  section th,
+  td {
+    @apply text-left border-2 border-gray-200 pt-2 pb-5 px-3;
+  }
+  /* h1~h6のスタイリング */
+  section h1 {
+    @apply text-2xl font-bold text-blue-400 border-b-4 my-10 p-2 underline border-gray-500 dark:border-b-gray-200;
+  }
+  section h2 {
+    @apply text-xl font-bold text-gray-600 dark:text-gray-200 my-8;
+  }
+  section h3 {
+    @apply text-lg font-bold text-gray-600 dark:text-gray-200 my-6;
+  }
+  section h4 {
+    @apply text-base font-bold text-gray-600 dark:text-gray-200 my-2;
+  }
+  section h5 {
+    @apply text-sm font-bold text-gray-600 dark:text-gray-200 my-1;
+  }
+  section h6 {
+    @apply text-xs font-bold text-gray-600 dark:text-gray-200;
+  }
+  /* 1行で書かれたコードのスタイル */
+  section p code {
+    @apply font-mono text-red-500 tracking-tight p-[0.5px] bg-gray-300 border-2 border-gray-300 rounded-[3px] mx-1;
+  }
+  section ol {
+    @apply list-decimal pl-8;
+  }
 }
 
-a {
-  color: inherit;
-  text-decoration: none;
-}
-
-* {
-  box-sizing: border-box;
+.rehype-code-title {
+  @apply inline-block px-3  text-gray-400 w-auto mx-4 mt-4 mb-1 rounded-t-xl bg-[#3b4252] underline;
 }
