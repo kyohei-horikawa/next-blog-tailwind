@@ -1,7 +1,7 @@
 import fs from "fs";
 import { join } from "path";
 
-const postsDirectory = join(process.cwd(), "posts");
+const postsDirectory = join("./public", "posts");
 
 export const getDirSlugs = () => {
   const allDirents = fs.readdirSync(postsDirectory, { withFileTypes: true });

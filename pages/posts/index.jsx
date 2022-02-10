@@ -22,7 +22,7 @@ export default function Posts({ allPosts }) {
         <p className="text-3xl">投稿一覧</p>
       </div>
       {allPosts?.map((post) => (
-        <Post post={post} />
+        <Post key={post.title} post={post} />
       ))}
     </div>
   );

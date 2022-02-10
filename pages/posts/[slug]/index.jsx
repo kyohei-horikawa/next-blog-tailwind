@@ -1,4 +1,5 @@
 import React from "react";
+import ReactDom from "react-dom";
 
 import { getDirSlugs } from "utils/getDirSlugs";
 import { getPostBySlug } from "utils/getPostBySlug";
@@ -11,6 +12,7 @@ import rehypeReact from "rehype-react";
 import { Title } from "components/Title";
 import { CustomLink } from "components/customLink";
 import { CustomNav } from "components/customNav";
+import { CustomImage } from "components/customImage";
 
 export const getStaticPaths = async () => {
   const paths = getDirSlugs().map((slug) => `/posts/${slug}`);

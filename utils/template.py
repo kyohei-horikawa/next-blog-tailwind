@@ -28,6 +28,7 @@ title: "{file_name}"
 date: "{now}"
 tags: ["タグ1","タグ2"]
 ---
+
 '''
     f.write(template)
 

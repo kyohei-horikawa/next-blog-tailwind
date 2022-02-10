@@ -2,7 +2,7 @@ import fs from "fs";
 import { join } from "path";
 import matter from "gray-matter";
 
-const postsDirectory = join(process.cwd(), "posts");
+const postsDirectory = join("./public", "posts");
 
 export const getPostByTag = (tag) => {
   const allDirents = fs.readdirSync(postsDirectory, { withFileTypes: true });

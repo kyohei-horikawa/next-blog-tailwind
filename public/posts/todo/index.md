@@ -28,18 +28,18 @@ tags: ["テスト","タグ２","Todo"]
 
 ## ヘッダーの調整
 
-![](/header.png)
+![](/posts/todo/header.png)
 
 ダークモードのトグルが見切れる．
 
 ## コードタイトルの調整
 
-![](/codetitle.png)
+![](/posts/todo/codetitle.png)
 
 小さい画面で長いコードタイトルがはみ出る．
 
 ## タグ一覧
 
-![](/tags.png)
+![](/posts/todo/tags.png)
 
 小さい画面では横並びではなく，縦にする

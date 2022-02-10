@@ -13,9 +13,7 @@ export const Post = ({ post }) => {
     >
       <div>
         <Image
-          // src={`/${mainTag}.png`}
-          // src={`/${dirName}/cover.png`}
-          src={require(`posts/${dirName}/cover.png`)}
+          src={`/posts/${dirName}/cover.png`}
           width={250}
           height={150}
           layout="fixed"
