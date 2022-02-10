@@ -25,7 +25,7 @@ with open(file_path, 'w') as f:
     template = f'''---
 title: "{file_name}"
 date: "{now}"
-tags: ["タグ1","タグ２"]
+tags: ["タグ1","タグ2"]
 ---
 '''
     f.write(template)
