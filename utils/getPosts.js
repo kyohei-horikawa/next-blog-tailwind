@@ -24,6 +24,5 @@ export const getPosts = () => {
   posts.sort((a, b) => {
     return a.date < b.date ? 1 : -1;
   });
-  console.log(posts);
   return posts;
 };
