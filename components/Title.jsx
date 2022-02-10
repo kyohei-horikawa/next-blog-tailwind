@@ -18,6 +18,8 @@ export const Title = ({ title, date, tags }) => {
           width={2} //縦横比
           height={1}
           layout="responsive"
+          quality={100}
+          priority={true}
         />
       </div>
     </>

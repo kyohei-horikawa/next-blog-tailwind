@@ -29,7 +29,7 @@ const TagPage = ({ posts, tag }) => {
         <p className="text-3xl">{tag}</p>
       </div>
       {posts.map((post) => (
-        <li className="li-none">
+        <li key={post.title} className="li-none">
           <Post post={post} />
         </li>
       ))}
