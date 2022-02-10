@@ -9,6 +9,7 @@
     "template": "python3 ./utils/template.py"
   },
   "dependencies": {
+    "file-loader": "^6.2.0",
     "gray-matter": "^4.0.3",
     "highlight.js": "^11.4.0",
     "imagemin-mozjpeg": "^10.0.0",
@@ -34,7 +35,8 @@
     "remark-math": "^5.1.1",
     "remark-parse": "^10.0.1",
     "remark-rehype": "^10.1.0",
-    "unified": "^10.1.1"
+    "unified": "^10.1.1",
+    "url-loader": "^4.1.1"
   },
   "devDependencies": {
     "autoprefixer": "^10.4.2",

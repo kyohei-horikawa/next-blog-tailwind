@@ -7,11 +7,15 @@ export const Post = ({ post }) => {
   const dirPath = `/posts/${dirName}`;
   const mainTag = tags[0];
   return (
-    <div key={post.title} className="flex items-center border-t-4 border-gray-400 dark:border-gray-100 pt-4 my-4">
+    <div
+      key={post.title}
+      className="flex items-center border-t-4 border-gray-400 dark:border-gray-100 pt-4 my-4"
+    >
       <div>
         <Image
-          src={`/${mainTag}.png`}
+          // src={`/${mainTag}.png`}
           // src={`/${dirName}/cover.png`}
+          src={require(`posts/${dirName}/cover.png`)}
           width={250}
           height={150}
           layout="fixed"

@@ -15,6 +15,7 @@ export const Title = ({ title, date, tags, dirName }) => {
       <div className="pt-4 pb-8">
         <Image
           src={require(`posts/${dirName}/cover.png`)}
+          // src={`/${dirName}/cover.png`}
           // src={`/${mainTag}.png`}
           width={2} //縦横比
           height={1}
