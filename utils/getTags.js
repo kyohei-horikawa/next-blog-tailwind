@@ -5,13 +5,13 @@ import matter from "gray-matter";
 const postsDirectory = join(process.cwd(), "posts");
 
 export const getTags = () => {
-  const files = fs.readdirSync(postsDirectory);
+  const allDirents = fs.readdirSync(postsDirectory, { withFileTypes: true });
+  const dirNames = allDirents
+    .filter((dirent) => !dirent.isFile())
+    .map(({ name }) => name);
   const tags = [];
-  files.forEach((file) => {
-    if (!file.includes(".md")) {
-      return;
-    }
-    const fullPath = join(postsDirectory, file);
+  dirNames.forEach((dir) => {
+    const fullPath = join(postsDirectory, dir, "index.md");
     const fileContents = fs.readFileSync(fullPath, "utf8");
     const { data, content } = matter(fileContents);
     data["tags"].forEach((tag) => {

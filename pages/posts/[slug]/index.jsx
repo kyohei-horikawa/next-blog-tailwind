@@ -1,7 +1,7 @@
 import React from "react";
 
-import { getPostsNames } from "utils/getPostsNames";
-import { getPostByName } from "utils/getPostByName";
+import { getDirSlugs } from "utils/getDirSlugs";
+import { getPostBySlug } from "utils/getPostBySlug";
 import { markdownToHtml } from "utils/markdownToHtml";
 
 import { unified } from "unified";
@@ -13,12 +13,12 @@ import { CustomLink } from "components/customLink";
 import { CustomNav } from "components/customNav";
 
 export const getStaticPaths = async () => {
-  const paths = getPostsNames().map((path) => `/posts/${path}`);
+  const paths = getDirSlugs().map((slug) => `/posts/${slug}`);
   return { paths, fallback: false };
 };
 
 export const getStaticProps = async ({ params }) => {
-  const post = getPostByName(params.fileName);
+  const post = getPostBySlug(params.slug);
   const content = await markdownToHtml(post.content);
   return { props: { post: { ...post, content } } };
 };
