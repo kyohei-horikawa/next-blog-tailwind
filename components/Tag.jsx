@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { Tags } from "components/Tags";
 
-export const Tags = ({ post }) => {
+export const Tag = ({ post }) => {
   const { title, date, tags, fileName } = post;
   return (
     <div className="border-t-4 pt-4 my-4">
