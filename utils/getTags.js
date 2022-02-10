@@ -8,6 +8,9 @@ export const getTags = () => {
   const files = fs.readdirSync(postsDirectory);
   const tags = [];
   files.forEach((file) => {
+    if (!file.includes(".md")) {
+      return;
+    }
     const fullPath = join(postsDirectory, file);
     const fileContents = fs.readFileSync(fullPath, "utf8");
     const { data, content } = matter(fileContents);
