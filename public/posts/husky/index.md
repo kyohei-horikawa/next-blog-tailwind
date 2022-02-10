@@ -85,7 +85,7 @@ for file in files:
     with open(file, 'r') as f:
         lines = f.readlines()
         for line in lines:
-            res = re.match(r"!\[\]\((.*)\)", line)
+            res = re.match(r"!\[.*\]\((.*)\)", line)
             if res:
                 img_path = res.groups()[0]
                 new_line = f"![]({dirpath}{img_path})\n"
