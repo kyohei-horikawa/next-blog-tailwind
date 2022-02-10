@@ -29,13 +29,13 @@ public/
 [プレビューされない](/public/posts/husky/not-preview.png)
 ```
 
-![プレビューされない](not-preview.png)
+![プレビューされない](/posts/husky/not-preview.png)
 
 ```md:markdown
 [プレビューされる](preview.png)
 ```
 
-![プレビューされる](preview.png)
+![プレビューされる](/posts/husky/preview.png)
 
 
 問題点として，プレビューされる形式で記述するとnextjsの記法に反してしまい，本番環境に反映されないということ．
