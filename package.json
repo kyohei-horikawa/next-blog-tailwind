@@ -7,7 +7,7 @@
     "build": "next build",
     "start": "next start",
     "template": "python3 ./utils/template.py",
-    "prepare": "husky install"
+    "ga": "python3 ./utils/convert_link.py && git add ."
   },
   "dependencies": {
     "file-loader": "^6.2.0",
