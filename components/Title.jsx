@@ -1,7 +1,7 @@
 import { Tags } from "components/Tags";
 import Image from "next/image";
 
-export const Title = ({ title, date, tags }) => {
+export const Title = ({ title, date, tags, dirName }) => {
   const mainTag = tags[0];
   return (
     <>
@@ -14,7 +14,8 @@ export const Title = ({ title, date, tags }) => {
       <Tags tags={tags} />
       <div className="pt-4 pb-8">
         <Image
-          src={`/${mainTag}.png`}
+          src={require(`posts/${dirName}/cover.png`)}
+          // src={`/${mainTag}.png`}
           width={2} //縦横比
           height={1}
           layout="responsive"

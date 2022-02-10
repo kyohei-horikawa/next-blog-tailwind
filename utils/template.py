@@ -20,6 +20,7 @@ if file_path in files:
     sys.exit()
 
 subprocess.run(['mkdir', '-p', './posts/' + file_name])
+subprocess.run(['mkdir', '-p', './public/' + file_name])
 
 with open(file_path, 'w') as f:
     template = f'''---

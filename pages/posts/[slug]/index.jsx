@@ -36,7 +36,12 @@ const processor = unified()
 const PostPage = ({ post }) => {
   return (
     <div>
-      <Title title={post.title} date={post.date} tags={post.tags} />
+      <Title
+        title={post.title}
+        date={post.date}
+        tags={post.tags}
+        dirName={post.dirName}
+      />
       <section className="relative">
         {processor.processSync(post.content).result}
       </section>
