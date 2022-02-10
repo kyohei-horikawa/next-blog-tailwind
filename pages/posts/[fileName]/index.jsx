@@ -3,7 +3,6 @@ import React from "react";
 import { getPostsNames } from "utils/getPostsNames";
 import { getPostByName } from "utils/getPostByName";
 import { markdownToHtml } from "utils/markdownToHtml";
-import { getTags } from "utils/getTags";
 
 import { unified } from "unified";
 import rehypeParse from "rehype-parse";
@@ -19,7 +18,6 @@ export const getStaticPaths = async () => {
 };
 
 export const getStaticProps = async ({ params }) => {
-  console.log(getTags());
   const post = getPostByName(params.fileName);
   const content = await markdownToHtml(post.content);
   return { props: { post: { ...post, content } } };
