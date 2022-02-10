@@ -24,21 +24,17 @@ export const getStaticProps = async ({ params }) => {
 const TagPage = ({ posts, tag }) => {
   return (
     <div>
-      <Header />
-      <ul className="mx-auto w-[65%] pt-[65px]">
-        <div className="flex">
-          <IconContext.Provider value={{ size: "1.5em" }}>
-            <AiFillTags />
-          </IconContext.Provider>
-          <p className="text-3xl">{tag}</p>
-        </div>
-        {posts.map((post) => (
-          <li>
-            <Post post={post} />
-          </li>
-        ))}
-      </ul>
-      <Footer />
+      <div className="flex">
+        <IconContext.Provider value={{ size: "1.5em" }}>
+          <AiFillTags />
+        </IconContext.Provider>
+        <p className="text-3xl">{tag}</p>
+      </div>
+      {posts.map((post) => (
+        <li className="li-none">
+          <Post post={post} />
+        </li>
+      ))}
     </div>
   );
 };

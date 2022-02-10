@@ -77,5 +77,9 @@
 }
 
 .rehype-code-title {
-  @apply inline-block px-3  text-gray-400 w-auto mx-4 mt-4 mb-1 rounded-t-xl bg-[#3b4252] underline;
+  @apply inline-block px-3  text-gray-400 w-auto mx-4 mt-4 mb-1 rounded-t-xl bg-[#3b4252] underline max-w-full;
+}
+
+.li-none {
+  @apply list-none;
 }

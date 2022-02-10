@@ -9,9 +9,7 @@ import { unified } from "unified";
 import rehypeParse from "rehype-parse";
 import rehypeReact from "rehype-react";
 
-import { Header } from "components/Header";
 import { Title } from "components/Title";
-import { Footer } from "components/Footer";
 import { CustomLink } from "components/customLink";
 import { CustomNav } from "components/customNav";
 
@@ -40,14 +38,10 @@ const processor = unified()
 const PostPage = ({ post }) => {
   return (
     <div>
-      <Header />
-      <div className="mx-auto w-[65%] pt-[50px]">
-        <Title title={post.title} date={post.date} tags={post.tags} />
-        <section className="relative">
-          {processor.processSync(post.content).result}
-        </section>
-      </div>
-      <Footer />
+      <Title title={post.title} date={post.date} tags={post.tags} />
+      <section className="relative">
+        {processor.processSync(post.content).result}
+      </section>
     </div>
   );
 };
