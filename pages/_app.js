@@ -9,13 +9,13 @@ import { Footer } from "components/Footer";
 function MyApp({ Component, pageProps }) {
   return (
     <>
-      <Header />
-      <div className="mx-auto w-[90%] sm:w-[65%] pt-[60px]">
-        <ThemeProvider attribute="class">
+      <ThemeProvider attribute="class">
+        <Header />
+        <div className="mx-auto w-[90%] sm:w-[65%] pt-[60px]">
           <Component {...pageProps} />
-        </ThemeProvider>
-      </div>
-      <Footer />
+        </div>
+        <Footer />
+      </ThemeProvider>
     </>
   );
 }

@@ -3,7 +3,7 @@ import { SwitchButton } from "components/switchButton";
 
 export const Header = () => {
   return (
-    <header className="flex justify-between h-16 w-screen fixed bg-white dark:bg-darkgrey z-10">
+    <header className="flex justify-between items-center h-16 w-screen fixed bg-white dark:bg-darkgrey z-10">
       <div></div>
       <div>
         <Link href="/">
