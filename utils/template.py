@@ -3,28 +3,26 @@ import datetime
 import sys
 import glob
 
-files = glob.glob("./posts/*/*.md")
+files = glob.glob("./public/posts/*/*.md")
 now = datetime.datetime.today().strftime('%Y/%m/%d %H:%M:%S')
-
 
 if len(sys.argv) == 1:
     print('ファイル名を入力してください．')
-    file_name = input()
+    slug = input()
 else:
-    file_name = sys.argv[1]
+    slug = sys.argv[1]
 
-file_path = './posts/' + file_name + '/index.md'
+file_path = './public/posts/' + slug + '/index.md'
 
 if file_path in files:
     print('既に存在しています．')
     sys.exit()
 
-subprocess.run(['mkdir', '-p', './posts/' + file_name])
-subprocess.run(['mkdir', '-p', './public/' + file_name])
+subprocess.run(['mkdir', '-p', './public/posts/' + slug])
 
 with open(file_path, 'w') as f:
     template = f'''---
-title: "{file_name}"
+title: "{slug}"
 date: "{now}"
 tags: ["タグ1","タグ2"]
 ---
