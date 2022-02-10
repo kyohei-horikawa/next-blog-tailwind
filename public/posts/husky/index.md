@@ -26,13 +26,13 @@ public/
 そのパスを用いて，VsCodeでmdを編集しているとプレビューで画像が表示されず不便である．
 
 ```md:markdown
-[プレビューされない](/public/posts/husky/not-preview.png)
+![プレビューされない](/public/posts/husky/not-preview.png)
 ```
 
 ![プレビューされない](/posts/husky/not-preview.png)
 
 ```md:markdown
-[プレビューされる](preview.png)
+![プレビューされる](preview.png)
 ```
 
 ![プレビューされる](/posts/husky/preview.png)
@@ -67,7 +67,23 @@ public/
 python3 ./utils/convert_link.py
 ```
 
-linkの修正はpythonで行うことにした．
+## 勘違い
+
+commitの前にmdを書き換えても意味がないことに気づいてしまった，，，
+
+huskyには，```pre-add```というhookはないようなので，無理やり方針を変える．
+
+## 新しい方針
+
+苦肉の策だが，```package.json```のscriptでリンクの修正と```git add```を同時に行うこととした．
+
+```js:package.json
+{
+"scripts": {
+    "ga": "python3 ./utils/convert_link.py && git add ."
+  },
+}
+```
 
 ## conver_link.py
 
@@ -85,11 +101,13 @@ for file in files:
     with open(file, 'r') as f:
         lines = f.readlines()
         for line in lines:
-            res = re.match(r"!\[.*\]\((.*)\)", line)
+            res = re.match(r"!\[(.*)\]\((.*)\)", line)
             if res:
-                img_path = res.groups()[0]
-                new_line = f"![]({dirpath}{img_path})\n"
-                lines[lines.index(line)] = new_line
+                alt = res.groups()[0]
+                img_path = res.groups()[1]
+                if not img_path[0] == '/':
+                    new_line = f"![{alt}]({dirpath}{img_path})\n"
+                    lines[lines.index(line)] = new_line
     with open(file, 'w') as f:
         f.writelines(lines)
 ```
@@ -100,4 +118,6 @@ for file in files:
 
 # おわりに
 
-今回は，nextjsとmdの記法の差異を```husky```を用いて吸収することができた．
+今回は，nextjsとmdの記法の差異を```package.json```のscriptを用いて解決した??
+
+```husky```についても学ぶことができたのでギリギリセーフということで😅

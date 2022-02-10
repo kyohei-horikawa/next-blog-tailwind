@@ -50,10 +50,10 @@
   }
   /* h1~h6のスタイリング */
   section h1 {
-    @apply text-2xl font-bold text-blue-400 border-b-4 my-10 p-2 underline border-gray-500 dark:border-b-gray-200;
+    @apply text-2xl font-bold text-blue-400 border-b-4 my-10 underline pb-2 border-gray-500 dark:border-b-gray-200;
   }
   section h2 {
-    @apply text-xl font-bold text-gray-600 dark:text-gray-200 my-8;
+    @apply text-xl font-bold text-gray-600 dark:text-gray-200 my-8 pb-1 border-b-2 border-gray-500 dark:border-b-gray-200;
   }
   section h3 {
     @apply text-lg font-bold text-gray-600 dark:text-gray-200 my-6;
