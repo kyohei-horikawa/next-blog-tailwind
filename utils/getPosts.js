@@ -16,10 +16,11 @@ export const getPosts = () => {
     const { data, content } = matter(fileContents);
     const items = {
       content: content,
-      dirName: dir,
+      slug: dir,
       title: data["title"],
       date: data["date"],
       tags: data["tags"],
+      summary: data["summary"],
     };
     posts.push(items);
   });

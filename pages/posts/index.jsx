@@ -6,7 +6,6 @@ import { Post } from "components/Post";
 
 export const getStaticProps = async () => {
   const allPosts = getPosts();
-
   return {
     props: { allPosts },
   };

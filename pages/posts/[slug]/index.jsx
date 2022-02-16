@@ -1,5 +1,6 @@
+import Head from "next/head";
+
 import React from "react";
-import ReactDom from "react-dom";
 
 import { getDirSlugs } from "utils/getDirSlugs";
 import { getPostBySlug } from "utils/getPostBySlug";
@@ -12,7 +13,6 @@ import rehypeReact from "rehype-react";
 import { Title } from "components/Title";
 import { CustomLink } from "components/customLink";
 import { CustomNav } from "components/customNav";
-import { CustomImage } from "components/customImage";
 
 export const getStaticPaths = async () => {
   const paths = getDirSlugs().map((slug) => `/posts/${slug}`);
@@ -38,11 +38,19 @@ const processor = unified()
 const PostPage = ({ post }) => {
   return (
     <div>
+      <Head>
+        <title>{post.title}</title>
+        <meta property="description" content={post.summary} />
+        <meta property="og:title" content={post.title} />
+        <meta property="og:description" content={post.summary} />
+        <meta property="og:image" content={`/posts/${post.slug}/cover.png`} />
+        <meta name="twitter:card" content={`/posts/${post.slug}/cover.png`} />
+      </Head>
       <Title
         title={post.title}
         date={post.date}
         tags={post.tags}
-        dirName={post.dirName}
+        slug={post.slug}
       />
       <section className="relative">
         {processor.processSync(post.content).result}

@@ -16,7 +16,7 @@ export const getPostByTag = (tag) => {
     const { data, content } = matter(fileContents);
     const items = {
       content: content,
-      dirName: dir,
+      slug: dir,
       title: data["title"],
       date: data["date"],
       tags: data["tags"],

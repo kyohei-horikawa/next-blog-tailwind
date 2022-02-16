@@ -3,9 +3,8 @@ import { Tags } from "components/Tags";
 import Image from "next/image";
 
 export const Post = ({ post }) => {
-  const { title, date, tags, dirName } = post;
-  const dirPath = `/posts/${dirName}`;
-  const mainTag = tags[0];
+  const { title, date, tags, slug } = post;
+  console.log(post);
   return (
     <div
       key={post.title}
@@ -13,7 +12,7 @@ export const Post = ({ post }) => {
     >
       <div>
         <Image
-          src={`/posts/${dirName}/cover.png`}
+          src={`/posts/${slug}/cover.png`}
           width={250}
           height={150}
           layout="fixed"
@@ -21,7 +20,7 @@ export const Post = ({ post }) => {
         />
       </div>
       <div className="pl-8">
-        <Link href={`/posts/${dirName}`}>
+        <Link href={`/posts/${slug}`}>
           <a className="font-bold text-4xl ml-8">{title}</a>
         </Link>
         <p className="ml-8 mt-2">{date}</p>

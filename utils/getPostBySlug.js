@@ -10,10 +10,11 @@ export const getPostBySlug = (slug) => {
   const { data, content } = matter(fileContents);
   const items = {
     content: content,
-    dirName: slug,
+    slug: slug,
     title: data["title"],
     date: data["date"],
     tags: data["tags"],
+    summary: data["summary"],
   };
   return items;
 };
