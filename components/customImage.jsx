@@ -1,7 +1,6 @@
 import Image from "next/image";
 
 export const CustomImage = ({ src, alt, width, height }) => {
-  console.log(alt);
   return (
     <Image
       src={`${src}`}
