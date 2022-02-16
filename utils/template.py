@@ -25,6 +25,7 @@ with open(file_path, 'w') as f:
 title: "{slug}"
 date: "{now}"
 tags: ["タグ1","タグ2"]
+summary: ""
 ---
 
 '''
