@@ -1,7 +1,7 @@
 ---
 title: "todo"
 date: "2022/02/10 06:00:46"
-tags: ["テスト","タグ２","Todo"]
+tags: ["テスト","タグ2","Todo"]
 summary: "ToDo List!!"
 ---
 
