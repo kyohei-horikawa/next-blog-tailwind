@@ -12,7 +12,7 @@ summary: ""
 [rehype-toc](https://github.com/JS-DevTools/rehype-toc)で目次をつける際に，以下の画像のようになり，
 段落構成がおかしくなってしまう．
 
-![before](before.png)
+![before](/posts/rehype pluginを自作する/before.png)
 
 h2ではなくh1で脚注をつけることを目的とする．
 
