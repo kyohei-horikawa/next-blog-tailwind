@@ -8,13 +8,9 @@ import remarkMath from "remark-math";
 import rehypeKatex from "rehype-katex";
 import toc from "rehype-toc";
 import slug from "rehype-slug";
-import rehypeDocument from "rehype-document";
 import codeTitle from "rehype-code-titles";
-/**
- * unifiedによるmarkdownの構文変換を行う
- * @param markdown markdown記法で書かれたプレーンテキスト
- * @returns 変換結果をString化したもの
- */
+import rehypeFootnote from "./rehype-footnote";
+
 export const markdownToHtml = async (markdown) => {
   const result = await unified()
     .use(remarkParse) // Markdownをmdast(Markdownの抽象構文木)に変換
@@ -23,7 +19,7 @@ export const markdownToHtml = async (markdown) => {
     .use(remarkRehype) // mdastをhast(HTMLの抽象構文木)に変換
     .use(codeTitle)
     .use(slug)
-    .use(rehypeDocument)
+    .use(rehypeFootnote)
     .use(toc, {
       customizeTOC: (toc) => {
         const replacer = (children) => {
