@@ -13,6 +13,7 @@ import rehypeReact from "rehype-react";
 import { Title } from "components/Title";
 import { CustomLink } from "components/customLink";
 import { CustomNav } from "components/customNav";
+import { CustomFootnote } from "components/CustomFootnote";
 
 export const getStaticPaths = async () => {
   const paths = getDirSlugs().map((slug) => `/posts/${slug}`);
@@ -32,6 +33,7 @@ const processor = unified()
     components: {
       a: CustomLink, // <a>を<CustomLink>に置き換えるよう設定
       nav: CustomNav,
+      // h2: CustomFootnote,
     },
   });
 

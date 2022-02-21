@@ -4,7 +4,7 @@ import { IconContext } from "react-icons";
 
 export const Tags = ({ tags, title }) => {
   return (
-    <ul className="flex my-4">
+    <ul className="sm:w-[500px] flex my-4">
       <IconContext.Provider value={{ size: "1.5em" }}>
         <AiFillTags />
       </IconContext.Provider>

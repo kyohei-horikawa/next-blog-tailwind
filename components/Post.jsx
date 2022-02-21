@@ -18,7 +18,7 @@ export const Post = ({ post }) => {
           priority={true}
         />
       </div>
-      <div className="pl-8 w-[200px]">
+      <div className="pl-8 w-auto">
         <Link href={`/posts/${slug}`}>
           <a className="font-bold text-4xl ml-8">{title}</a>
         </Link>
