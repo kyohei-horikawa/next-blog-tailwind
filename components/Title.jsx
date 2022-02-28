@@ -2,6 +2,7 @@ import { Tags } from "components/Tags";
 import Image from "next/image";
 
 export const Title = ({ title, date, tags, slug }) => {
+  console.log(slug);
   return (
     <>
       <h1 className="text-blue-500 text-5xl text-bold border-y-4 my-4 py-8 border-gray-500 dark:border-gray-200">

@@ -13,7 +13,6 @@ import rehypeReact from "rehype-react";
 import { Title } from "components/Title";
 import { CustomLink } from "components/customLink";
 import { CustomNav } from "components/customNav";
-import { CustomFootnote } from "components/CustomFootnote";
 
 export const getStaticPaths = async () => {
   const paths = getDirSlugs().map((slug) => `/posts/${slug}`);
@@ -27,13 +26,12 @@ export const getStaticProps = async ({ params }) => {
 };
 
 const processor = unified()
-  .use(rehypeParse, { fragment: true }) // fragmentは必ずtrueにする
+  .use(rehypeParse, { fragment: true }) 
   .use(rehypeReact, {
     createElement: React.createElement,
     components: {
-      a: CustomLink, // <a>を<CustomLink>に置き換えるよう設定
+      a: CustomLink,
       nav: CustomNav,
-      // h2: CustomFootnote,
     },
   });
 
