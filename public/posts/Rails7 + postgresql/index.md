@@ -92,3 +92,67 @@ githubでリポジトリを作成．
 git remote add origin git@github.com:kyohei-horikawa/sandbox.git
 git push -u origin main
 ```
+
+```bash
+heroku create
+git push heroku main
+```
+
+エラー
+
+```bash
+Enumerating objects: 112, done.
+Counting objects: 100% (112/112), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (96/96), done.
+Writing objects: 100% (112/112), 27.17 KiB | 3.02 MiB/s, done.
+Total 112 (delta 3), reused 0 (delta 0), pack-reused 0
+remote: Compressing source files... done.
+remote: Building source:
+remote:
+remote: -----> Building on the Heroku-20 stack
+remote: -----> Determining which buildpack to use for this app
+remote: -----> Ruby app detected
+remote: -----> Installing bundler 2.3.10
+remote: -----> Removing BUNDLED WITH version in the Gemfile.lock
+remote: -----> Compiling Ruby/Rails
+remote: -----> Using Ruby version: ruby-3.0.2
+remote: -----> Installing dependencies using bundler 2.3.10
+remote:        Running: BUNDLE_WITHOUT='development:test' BUNDLE_PATH=vendor/bundle BUNDLE_BIN=vendor/bundle/bin BUNDLE_DEPLOYMENT=1 bundle install -j4
+remote:        Your bundle only supports platforms ["arm64-darwin-20"] but your local platform
+remote:        is x86_64-linux. Add the current platform to the lockfile with
+remote:        `bundle lock --add-platform x86_64-linux` and try again.
+remote:        Bundler Output: Your bundle only supports platforms ["arm64-darwin-20"] but your local platform
+remote:        is x86_64-linux. Add the current platform to the lockfile with
+remote:        `bundle lock --add-platform x86_64-linux` and try again.
+remote:
+remote:  !
+remote:  !     Failed to install gems via Bundler.
+remote:  !
+remote:  !     Push rejected, failed to compile Ruby app.
+remote:
+remote:  !     Push failed
+remote: Verifying deploy...
+remote:
+remote: !	Push rejected to fierce-headland-39155.
+remote:
+To https://git.heroku.com/fierce-headland-39155.git
+ ! [remote rejected] main -> main (pre-receive hook declined)
+error: failed to push some refs to 'https://git.heroku.com/fierce-headland-39155.git'
+```
+
+```
+bundle lock --add-platform x86_64-linux
+git add .
+git commit 'fix gamefile lock'
+git push
+git push heroku main
+heroku run:detached rails db:migrate
+```
+
+まだ，エラー
+
+```ruby:config/routes.rb
+  root  'blogs#index'  #この1行を追加
+```
+
