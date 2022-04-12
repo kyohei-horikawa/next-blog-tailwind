@@ -9,7 +9,7 @@ summary: ""
 
 環境
 
-```bash
+```:bash
 ❯❯❯ ruby -v
 ruby 3.0.2p107 (2021-07-07 revision 0db68f0233) [arm64-darwin20]
 
@@ -26,13 +26,13 @@ postgres (PostgreSQL) 14.2
 postgresqlをインストール．
 
 
-```bash
+```:bash
 brew install postgresql
 ```
 
 postgresqlを起動.
 
-```bash
+```:bash
 brew services start postgresql
 ```
 
@@ -40,20 +40,20 @@ brew services start postgresql
 
 rails app の作成
 
-```bash
+```:bash
 rails new my-app -d postgresql
 cd my-app
 ```
 
 dbの作成．
 
-```bash
+```:bash
 rails db:create
 ```
 
 サーバーの起動
 
-```bash
+```:bash
 rails s
 ```
 
@@ -62,13 +62,13 @@ rails s
 
 ブログ機能の追加
 
-```bash
+```:bash
 rails g scaffold Blog title:string content:text
 rails db:create db:migrate
 rail s
 ```
 
-```bash
+```:bash
 http://127.0.0.1:3000/blogs
 ```
 
@@ -81,26 +81,26 @@ postgresを起動してないとアクセスできないので注意．
 herokuにデプロイ．
 
 
-```bash
+```:bash
 git add -A
 git commit -m 'initial commit'
 ```
 
 githubでリポジトリを作成．
 
-```bash
+```:bash
 git remote add origin git@github.com:kyohei-horikawa/sandbox.git
 git push -u origin main
 ```
 
-```bash
+```:bash
 heroku create
 git push heroku main
 ```
 
 エラー
 
-```bash
+```:bash
 Enumerating objects: 112, done.
 Counting objects: 100% (112/112), done.
 Delta compression using up to 8 threads
