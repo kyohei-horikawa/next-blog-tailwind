@@ -141,8 +141,13 @@ To https://git.heroku.com/fierce-headland-39155.git
 error: failed to push some refs to 'https://git.heroku.com/fierce-headland-39155.git'
 ```
 
-```
+エラー文の通りに実行
+
+```:bash
 bundle lock --add-platform x86_64-linux
+```
+
+```:bash
 git add .
 git commit 'fix gamefile lock'
 git push
