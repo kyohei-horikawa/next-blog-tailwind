@@ -1,5 +1,5 @@
 ---
-title: "Next.js + Tailwindcss"
+title: "Next.js+Tailwindcss"
 date: "2022/03/12 01:14:34"
 tags: ["Nextjs","Tailwindcss"]
 summary: ""

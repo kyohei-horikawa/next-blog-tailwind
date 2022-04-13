@@ -1,5 +1,5 @@
 ---
-title: "Rails7 + postgresql"
+title: "Rails7+postgresql"
 date: "2022/04/12 12:32:25"
 tags: ["Rails","postgresql"]
 summary: ""
