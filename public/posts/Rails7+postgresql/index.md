@@ -76,6 +76,10 @@ http://127.0.0.1:3000/blogs
 
 postgresを起動してないとアクセスできないので注意．
 
+ここまでは，ローカルで作成し，動作を確認した．
+
+ここからは，herokuにデプロイして，誰でもアクセスできるようにしていく．
+
 ## 手順４
 
 herokuにデプロイ．
@@ -161,3 +165,4 @@ heroku run:detached rails db:migrate
   root  'blogs#index'  #この1行を追加
 ```
 
+rootに対する，アドレスを指定する．
