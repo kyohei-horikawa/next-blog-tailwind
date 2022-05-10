@@ -255,3 +255,43 @@ pip3 install dist/
 - requirements.txtの扱いを考える
 
 
+
+# local install, uploadもコマンドにする
+
+面倒なことはパソコンにやらせよう．
+
+```bash:bash
+git clone git@github.com:kyohei-horikawa/pypi.git
+```
+
+https://github.com/kyohei-horikawa/pypi
+
+```python:pypi.py
+import fire
+import subprocess
+import os
+from pathlib import Path
+
+
+class Cli:
+    def get_new_path(self):
+        paths = list(Path('./dist').glob(r'*.tar.gz'))
+        paths.sort(key=os.path.getmtime)
+        return paths[-1]
+
+    def local(self):
+        subprocess.call(['python3', 'setup.py', 'sdist'])
+        subprocess.call(['pip3', 'install', self.get_new_path()])
+
+    def upload(self, to):
+        subprocess.call(['python3', 'setup.py', 'sdist', 'bdist_wheel'])
+        subprocess.call(['python3', '-m', 'twine', 'upload', '-r', to, self.get_new_path(), '--verbose'])
+
+
+def main():
+    fire.Fire(Cli)
+```
+
+```dist/*.tar.gz```をソートして，最新のものを取得して，先程のコマンドをラップ．
+
+これだけ．
