@@ -1,7 +1,7 @@
 ---
 title: "Rails7+tailwindcss"
 date: "2022/04/14 13:00:00"
-tags: ["Rails","Tialwindcss"]
+tags: ["Rails","Tailwindcss"]
 summary: ""
 ---
 
@@ -61,3 +61,5 @@ tailwindを用いたpostページが確認できる．
 htmlタグには，```class=""```の形で，erbには，```class: ""```の形でクラス指定していることがわかる．
 
 これらのプロパティはhttps://nerdcave.com/tailwind-cheat-sheet で確認できる．
+
+
