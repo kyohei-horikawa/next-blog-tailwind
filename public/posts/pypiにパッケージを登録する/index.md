@@ -1,5 +1,5 @@
 ---
-title: "pypiにパッケージを登録する．"
+title: "pypiにパッケージを登録する"
 date: "2022/05/11 03:51:57"
 tags: ["Python","pypi"]
 summary: ""
@@ -191,7 +191,7 @@ setup(
 ```
 
 ```bash:bash
-rm -rf dist/ myapp.egg-info
+rm -rf dist/ myapp.egg-info/
 ```
 
 プロジェクト名を変えたので，
